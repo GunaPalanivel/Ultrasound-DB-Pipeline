@@ -1,0 +1,144 @@
+[INFO] Tables in DB:
+- Patients
+- Doctors
+- Departments
+- Appointments
+- Ultrasound_Results
+- Machines
+- Technicians
+- Medical_History
+- Billing
+- Insurance
+- Medications
+- Treatments
+- Referrals
+- Symptoms
+- Diagnosis
+- Follow_Up
+- Reports
+- Radiologists
+- Clinics
+- Lab_Tests
+[INFO] Columns in table Patients:
+  - (0, 'PatientID', 'INT', 0, None, 1)
+  - (1, 'FirstName', 'VARCHAR(50)', 0, None, 0)
+  - (2, 'LastName', 'VARCHAR(50)', 0, None, 0)
+  - (3, 'DateOfBirth', 'DATE', 0, None, 0)
+  - (4, 'Gender', 'VARCHAR(10)', 0, None, 0)
+  - (5, 'Address', 'VARCHAR(100)', 0, None, 0)
+  - (6, 'ContactNumber', 'VARCHAR(15)', 0, None, 0)
+  - (7, 'Email', 'VARCHAR(50)', 0, None, 0)
+[INFO] Columns in table Doctors:
+  - (0, 'DoctorID', 'INT', 0, None, 1)
+  - (1, 'FirstName', 'VARCHAR(50)', 0, None, 0)
+  - (2, 'LastName', 'VARCHAR(50)', 0, None, 0)
+  - (3, 'Specialization', 'VARCHAR(50)', 0, None, 0)
+  - (4, 'ContactNumber', 'VARCHAR(15)', 0, None, 0)
+  - (5, 'Email', 'VARCHAR(50)', 0, None, 0)
+  - (6, 'DepartmentID', 'INT', 0, None, 0)
+[INFO] Columns in table Departments:
+  - (0, 'DepartmentID', 'INT', 0, None, 1)
+  - (1, 'DepartmentName', 'VARCHAR(50)', 0, None, 0)
+[INFO] Columns in table Appointments:
+  - (0, 'AppointmentID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'DoctorID', 'INT', 0, None, 0)
+  - (3, 'AppointmentDate', 'DATE', 0, None, 0)
+  - (4, 'Reason', 'VARCHAR(100)', 0, None, 0)
+[INFO] Columns in table Ultrasound_Results:
+  - (0, 'ResultID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'AppointmentID', 'INT', 0, None, 0)
+  - (3, 'Image', 'VARCHAR(100)', 0, None, 0)
+  - (4, 'Report', 'TEXT', 0, None, 0)
+[INFO] Columns in table Machines:
+  - (0, 'MachineID', 'INT', 0, None, 1)
+  - (1, 'MachineName', 'VARCHAR(50)', 0, None, 0)
+  - (2, 'DepartmentID', 'INT', 0, None, 0)
+  - (3, 'Status', 'VARCHAR(20)', 0, None, 0)
+[INFO] Columns in table Technicians:
+  - (0, 'TechnicianID', 'INT', 0, None, 1)
+  - (1, 'FirstName', 'VARCHAR(50)', 0, None, 0)
+  - (2, 'LastName', 'VARCHAR(50)', 0, None, 0)
+  - (3, 'ContactNumber', 'VARCHAR(15)', 0, None, 0)
+  - (4, 'Email', 'VARCHAR(50)', 0, None, 0)
+  - (5, 'DepartmentID', 'INT', 0, None, 0)
+[INFO] Columns in table Medical_History:
+  - (0, 'HistoryID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'Condition', 'VARCHAR(50)', 0, None, 0)
+  - (3, 'StartDate', 'DATE', 0, None, 0)
+  - (4, 'EndDate', 'DATE', 0, None, 0)
+[INFO] Columns in table Billing:
+  - (0, 'BillingID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'AppointmentID', 'INT', 0, None, 0)
+  - (3, 'TotalAmount', 'DECIMAL(10, 2)', 0, None, 0)
+  - (4, 'PaymentStatus', 'VARCHAR(20)', 0, None, 0)
+[INFO] Columns in table Insurance:
+  - (0, 'InsuranceID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'Provider', 'VARCHAR(50)', 0, None, 0)
+  - (3, 'PolicyNumber', 'VARCHAR(50)', 0, None, 0)
+  - (4, 'CoverageAmount', 'DECIMAL(10, 2)', 0, None, 0)
+  - (5, 'ExpiryDate', 'DATE', 0, None, 0)
+[INFO] Columns in table Medications:
+  - (0, 'MedicationID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'MedicationName', 'VARCHAR(50)', 0, None, 0)
+  - (3, 'Dosage', 'VARCHAR(50)', 0, None, 0)
+  - (4, 'StartDate', 'DATE', 0, None, 0)
+  - (5, 'EndDate', 'DATE', 0, None, 0)
+[INFO] Columns in table Treatments:
+  - (0, 'TreatmentID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'TreatmentName', 'VARCHAR(50)', 0, None, 0)
+  - (3, 'StartDate', 'DATE', 0, None, 0)
+  - (4, 'EndDate', 'DATE', 0, None, 0)
+[INFO] Columns in table Referrals:
+  - (0, 'ReferralID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'DoctorID', 'INT', 0, None, 0)
+  - (3, 'ReferredTo', 'VARCHAR(50)', 0, None, 0)
+  - (4, 'Reason', 'VARCHAR(100)', 0, None, 0)
+[INFO] Columns in table Symptoms:
+  - (0, 'SymptomID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'SymptomDescription', 'VARCHAR(100)', 0, None, 0)
+  - (3, 'OnsetDate', 'DATE', 0, None, 0)
+[INFO] Columns in table Diagnosis:
+  - (0, 'DiagnosisID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'Condition', 'VARCHAR(50)', 0, None, 0)
+  - (3, 'DiagnosisDate', 'DATE', 0, None, 0)
+[INFO] Columns in table Follow_Up:
+  - (0, 'FollowUpID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'AppointmentID', 'INT', 0, None, 0)
+  - (3, 'FollowUpDate', 'DATE', 0, None, 0)
+  - (4, 'Notes', 'TEXT', 0, None, 0)
+[INFO] Columns in table Reports:
+  - (0, 'ReportID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'AppointmentID', 'INT', 0, None, 0)
+  - (3, 'ReportText', 'TEXT', 0, None, 0)
+  - (4, 'ReportDate', 'DATE', 0, None, 0)
+[INFO] Columns in table Radiologists:
+  - (0, 'RadiologistID', 'INT', 0, None, 1)
+  - (1, 'FirstName', 'VARCHAR(50)', 0, None, 0)
+  - (2, 'LastName', 'VARCHAR(50)', 0, None, 0)
+  - (3, 'ContactNumber', 'VARCHAR(15)', 0, None, 0)
+  - (4, 'Email', 'VARCHAR(50)', 0, None, 0)
+  - (5, 'DepartmentID', 'INT', 0, None, 0)
+[INFO] Columns in table Clinics:
+  - (0, 'ClinicID', 'INT', 0, None, 1)
+  - (1, 'ClinicName', 'VARCHAR(50)', 0, None, 0)
+  - (2, 'Address', 'VARCHAR(100)', 0, None, 0)
+  - (3, 'ContactNumber', 'VARCHAR(15)', 0, None, 0)
+  - (4, 'Email', 'VARCHAR(50)', 0, None, 0)
+[INFO] Columns in table Lab_Tests:
+  - (0, 'LabTestID', 'INT', 0, None, 1)
+  - (1, 'PatientID', 'INT', 0, None, 0)
+  - (2, 'TestName', 'VARCHAR(50)', 0, None, 0)
+  - (3, 'TestDate', 'DATE', 0, None, 0)
+  - (4, 'Results', 'TEXT', 0, None, 0)

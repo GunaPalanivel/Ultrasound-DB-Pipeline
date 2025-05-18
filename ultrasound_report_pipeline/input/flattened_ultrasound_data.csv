@@ -1,0 +1,21 @@
+PatientID,FullName,Gender,DateOfBirth,AppointmentDate,VisitReason,UltrasoundImage,UltrasoundReport,ReportText,ReportDate
+1,John Doe,Male,1980-05-15,2025-02-20 09:00:00,Routine Check-Up,,Normal results.,Cholesterol levels are stable.,2025-03-20
+1,John Doe,Male,1980-05-15,2025-02-20 09:00:00,Routine Check-Up,,Normal results.,Patient is responding well to treatment.,2025-02-20
+2,Jane Smith,Female,1992-07-20,2025-02-21 10:30:00,Heart Consultation,,No abnormalities detected.,Arthritis symptoms are improving.,2025-04-25
+2,Jane Smith,Female,1992-07-20,2025-02-21 10:30:00,Heart Consultation,,No abnormalities detected.,No significant changes noted.,2025-03-21
+3,Michael Brown,Male,1985-03-10,2025-02-22 11:15:00,Neurological Examination,,Further tests recommended.,Further evaluation required.,2025-04-22
+3,Michael Brown,Male,1985-03-10,2025-02-22 11:15:00,Neurological Examination,,Further tests recommended.,Migraine frequency has reduced.,2025-05-30
+4,Emily Davis,Female,1990-04-25,2025-02-23 12:00:00,Orthopedic Check-Up,,Fracture detected.,Bone density is improving with treatment.,2025-07-05
+4,Emily Davis,Female,1990-04-25,2025-02-23 12:00:00,Orthopedic Check-Up,,Fracture detected.,Bone healing as expected.,2025-02-25
+5,Chris Johnson,Male,1978-02-14,2025-02-24 13:45:00,Dermatology Consultation,,Skin lesion observed.,Psoriasis is under control.,2025-08-10
+5,Chris Johnson,Male,1978-02-14,2025-02-24 13:45:00,Dermatology Consultation,,Skin lesion observed.,Skin condition improving.,2025-03-15
+6,Sarah Wilson,Female,1987-12-30,2025-02-25 14:30:00,Pediatric Check-Up,,Normal growth observed.,Allergy symptoms are manageable.,2025-09-15
+6,Sarah Wilson,Female,1987-12-30,2025-02-25 14:30:00,Pediatric Check-Up,,Normal growth observed.,Bronchitis symptoms reducing.,2025-04-05
+7,David Martinez,Male,1982-09-05,2025-02-26 15:15:00,Oncology Follow-Up,,Tumor detected.,Anemia is improving with supplements.,2025-10-20
+7,David Martinez,Male,1982-09-05,2025-02-26 15:15:00,Oncology Follow-Up,,Tumor detected.,Tumor size decreasing.,2025-05-15
+8,Laura Garcia,Female,1995-01-18,2025-02-27 16:00:00,Gynecological Examination,,Normal results.,Endometriosis symptoms are stable.,2025-11-25
+8,Laura Garcia,Female,1995-01-18,2025-02-27 16:00:00,Gynecological Examination,,Normal results.,Hormone therapy effective.,2025-06-01
+9,James Rodriguez,Male,1984-06-22,2025-02-28 16:45:00,Gastroenterology Consultation,,Inflammation detected.,GERD symptoms are reducing.,2025-12-30
+9,James Rodriguez,Male,1984-06-22,2025-02-28 16:45:00,Gastroenterology Consultation,,Inflammation detected.,Stomach pain reducing.,2025-07-10
+10,Lisa Lopez,Female,1991-11-09,2025-03-01 17:30:00,Ophthalmology Check-Up,,Normal vision.,Glaucoma progression is slow.,2026-01-05
+10,Lisa Lopez,Female,1991-11-09,2025-03-01 17:30:00,Ophthalmology Check-Up,,Normal vision.,Vision clarity restored.,2025-08-15

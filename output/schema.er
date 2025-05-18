@@ -1,0 +1,146 @@
+[Appointments]
+    *AppointmentID {label:"INTEGER"}
+    AppointmentDate {label:"DATE"}
+    DoctorID {label:"INTEGER"}
+    PatientID {label:"INTEGER"}
+    Reason {label:"VARCHAR(100)"}
+[Patients]
+    *PatientID {label:"INTEGER"}
+    Address {label:"VARCHAR(100)"}
+    ContactNumber {label:"VARCHAR(15)"}
+    DateOfBirth {label:"DATE"}
+    Email {label:"VARCHAR(50)"}
+    FirstName {label:"VARCHAR(50)"}
+    Gender {label:"VARCHAR(10)"}
+    LastName {label:"VARCHAR(50)"}
+[Doctors]
+    *DoctorID {label:"INTEGER"}
+    ContactNumber {label:"VARCHAR(15)"}
+    DepartmentID {label:"INTEGER"}
+    Email {label:"VARCHAR(50)"}
+    FirstName {label:"VARCHAR(50)"}
+    LastName {label:"VARCHAR(50)"}
+    Specialization {label:"VARCHAR(50)"}
+[Departments]
+    *DepartmentID {label:"INTEGER"}
+    DepartmentName {label:"VARCHAR(50)"}
+[Billing]
+    *BillingID {label:"INTEGER"}
+    AppointmentID {label:"INTEGER"}
+    PatientID {label:"INTEGER"}
+    PaymentStatus {label:"VARCHAR(20)"}
+    TotalAmount {label:"DECIMAL(10, 2)"}
+[Clinics]
+    *ClinicID {label:"INTEGER"}
+    Address {label:"VARCHAR(100)"}
+    ClinicName {label:"VARCHAR(50)"}
+    ContactNumber {label:"VARCHAR(15)"}
+    Email {label:"VARCHAR(50)"}
+[Diagnosis]
+    *DiagnosisID {label:"INTEGER"}
+    Condition {label:"VARCHAR(50)"}
+    DiagnosisDate {label:"DATE"}
+    PatientID {label:"INTEGER"}
+[Follow_Up]
+    *FollowUpID {label:"INTEGER"}
+    AppointmentID {label:"INTEGER"}
+    FollowUpDate {label:"DATE"}
+    Notes {label:"TEXT"}
+    PatientID {label:"INTEGER"}
+[Insurance]
+    *InsuranceID {label:"INTEGER"}
+    CoverageAmount {label:"DECIMAL(10, 2)"}
+    ExpiryDate {label:"DATE"}
+    PatientID {label:"INTEGER"}
+    PolicyNumber {label:"VARCHAR(50)"}
+    Provider {label:"VARCHAR(50)"}
+[Lab_Tests]
+    *LabTestID {label:"INTEGER"}
+    PatientID {label:"INTEGER"}
+    Results {label:"TEXT"}
+    TestDate {label:"DATE"}
+    TestName {label:"VARCHAR(50)"}
+[Machines]
+    *MachineID {label:"INTEGER"}
+    DepartmentID {label:"INTEGER"}
+    MachineName {label:"VARCHAR(50)"}
+    Status {label:"VARCHAR(20)"}
+[Medical_History]
+    *HistoryID {label:"INTEGER"}
+    Condition {label:"VARCHAR(50)"}
+    EndDate {label:"DATE"}
+    PatientID {label:"INTEGER"}
+    StartDate {label:"DATE"}
+[Medications]
+    *MedicationID {label:"INTEGER"}
+    Dosage {label:"VARCHAR(50)"}
+    EndDate {label:"DATE"}
+    MedicationName {label:"VARCHAR(50)"}
+    PatientID {label:"INTEGER"}
+    StartDate {label:"DATE"}
+[Radiologists]
+    *RadiologistID {label:"INTEGER"}
+    ContactNumber {label:"VARCHAR(15)"}
+    DepartmentID {label:"INTEGER"}
+    Email {label:"VARCHAR(50)"}
+    FirstName {label:"VARCHAR(50)"}
+    LastName {label:"VARCHAR(50)"}
+[Referrals]
+    *ReferralID {label:"INTEGER"}
+    DoctorID {label:"INTEGER"}
+    PatientID {label:"INTEGER"}
+    Reason {label:"VARCHAR(100)"}
+    ReferredTo {label:"VARCHAR(50)"}
+[Reports]
+    *ReportID {label:"INTEGER"}
+    AppointmentID {label:"INTEGER"}
+    PatientID {label:"INTEGER"}
+    ReportDate {label:"DATE"}
+    ReportText {label:"TEXT"}
+[Symptoms]
+    *SymptomID {label:"INTEGER"}
+    OnsetDate {label:"DATE"}
+    PatientID {label:"INTEGER"}
+    SymptomDescription {label:"VARCHAR(100)"}
+[Technicians]
+    *TechnicianID {label:"INTEGER"}
+    ContactNumber {label:"VARCHAR(15)"}
+    DepartmentID {label:"INTEGER"}
+    Email {label:"VARCHAR(50)"}
+    FirstName {label:"VARCHAR(50)"}
+    LastName {label:"VARCHAR(50)"}
+[Treatments]
+    *TreatmentID {label:"INTEGER"}
+    EndDate {label:"DATE"}
+    PatientID {label:"INTEGER"}
+    StartDate {label:"DATE"}
+    TreatmentName {label:"VARCHAR(50)"}
+[Ultrasound_Results]
+    *ResultID {label:"INTEGER"}
+    AppointmentID {label:"INTEGER"}
+    Image {label:"VARCHAR(100)"}
+    PatientID {label:"INTEGER"}
+    Report {label:"TEXT"}
+Doctors."DoctorID" ?--* Appointments."DoctorID"
+Patients."PatientID" ?--* Appointments."PatientID"
+Departments."DepartmentID" ?--* Doctors."DepartmentID"
+Appointments."AppointmentID" ?--* Billing."AppointmentID"
+Patients."PatientID" ?--* Billing."PatientID"
+Patients."PatientID" ?--* Diagnosis."PatientID"
+Appointments."AppointmentID" ?--* Follow_Up."AppointmentID"
+Patients."PatientID" ?--* Follow_Up."PatientID"
+Patients."PatientID" ?--* Insurance."PatientID"
+Patients."PatientID" ?--* Lab_Tests."PatientID"
+Departments."DepartmentID" ?--* Machines."DepartmentID"
+Patients."PatientID" ?--* Medical_History."PatientID"
+Patients."PatientID" ?--* Medications."PatientID"
+Departments."DepartmentID" ?--* Radiologists."DepartmentID"
+Doctors."DoctorID" ?--* Referrals."DoctorID"
+Patients."PatientID" ?--* Referrals."PatientID"
+Appointments."AppointmentID" ?--* Reports."AppointmentID"
+Patients."PatientID" ?--* Reports."PatientID"
+Patients."PatientID" ?--* Symptoms."PatientID"
+Departments."DepartmentID" ?--* Technicians."DepartmentID"
+Patients."PatientID" ?--* Treatments."PatientID"
+Appointments."AppointmentID" ?--* Ultrasound_Results."AppointmentID"
+Patients."PatientID" ?--* Ultrasound_Results."PatientID"

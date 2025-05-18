@@ -1,0 +1,9 @@
+pandas
+sqlalchemy
+matplotlib
+seaborn
+eralchemy
+jupyter
+eralchemy
+graphviz
+pygraphviz

@@ -1,0 +1,206 @@
+Table: Patients
+  Columns:
+    - PatientID (INT) [PK]
+    - FirstName (VARCHAR(50)) 
+    - LastName (VARCHAR(50)) 
+    - DateOfBirth (DATE) 
+    - Gender (VARCHAR(10)) 
+    - Address (VARCHAR(100)) 
+    - ContactNumber (VARCHAR(15)) 
+    - Email (VARCHAR(50)) 
+  Foreign Keys: None
+
+Table: Doctors
+  Columns:
+    - DoctorID (INT) [PK]
+    - FirstName (VARCHAR(50)) 
+    - LastName (VARCHAR(50)) 
+    - Specialization (VARCHAR(50)) 
+    - ContactNumber (VARCHAR(15)) 
+    - Email (VARCHAR(50)) 
+    - DepartmentID (INT) 
+  Foreign Keys:
+    - DepartmentID → Departments.DepartmentID
+
+Table: Departments
+  Columns:
+    - DepartmentID (INT) [PK]
+    - DepartmentName (VARCHAR(50)) 
+  Foreign Keys: None
+
+Table: Appointments
+  Columns:
+    - AppointmentID (INT) [PK]
+    - PatientID (INT) 
+    - DoctorID (INT) 
+    - AppointmentDate (DATE) 
+    - Reason (VARCHAR(100)) 
+  Foreign Keys:
+    - DoctorID → Doctors.DoctorID
+    - PatientID → Patients.PatientID
+
+Table: Ultrasound_Results
+  Columns:
+    - ResultID (INT) [PK]
+    - PatientID (INT) 
+    - AppointmentID (INT) 
+    - Image (VARCHAR(100)) 
+    - Report (TEXT) 
+  Foreign Keys:
+    - AppointmentID → Appointments.AppointmentID
+    - PatientID → Patients.PatientID
+
+Table: Machines
+  Columns:
+    - MachineID (INT) [PK]
+    - MachineName (VARCHAR(50)) 
+    - DepartmentID (INT) 
+    - Status (VARCHAR(20)) 
+  Foreign Keys:
+    - DepartmentID → Departments.DepartmentID
+
+Table: Technicians
+  Columns:
+    - TechnicianID (INT) [PK]
+    - FirstName (VARCHAR(50)) 
+    - LastName (VARCHAR(50)) 
+    - ContactNumber (VARCHAR(15)) 
+    - Email (VARCHAR(50)) 
+    - DepartmentID (INT) 
+  Foreign Keys:
+    - DepartmentID → Departments.DepartmentID
+
+Table: Medical_History
+  Columns:
+    - HistoryID (INT) [PK]
+    - PatientID (INT) 
+    - Condition (VARCHAR(50)) 
+    - StartDate (DATE) 
+    - EndDate (DATE) 
+  Foreign Keys:
+    - PatientID → Patients.PatientID
+
+Table: Billing
+  Columns:
+    - BillingID (INT) [PK]
+    - PatientID (INT) 
+    - AppointmentID (INT) 
+    - TotalAmount (DECIMAL(10, 2)) 
+    - PaymentStatus (VARCHAR(20)) 
+  Foreign Keys:
+    - AppointmentID → Appointments.AppointmentID
+    - PatientID → Patients.PatientID
+
+Table: Insurance
+  Columns:
+    - InsuranceID (INT) [PK]
+    - PatientID (INT) 
+    - Provider (VARCHAR(50)) 
+    - PolicyNumber (VARCHAR(50)) 
+    - CoverageAmount (DECIMAL(10, 2)) 
+    - ExpiryDate (DATE) 
+  Foreign Keys:
+    - PatientID → Patients.PatientID
+
+Table: Medications
+  Columns:
+    - MedicationID (INT) [PK]
+    - PatientID (INT) 
+    - MedicationName (VARCHAR(50)) 
+    - Dosage (VARCHAR(50)) 
+    - StartDate (DATE) 
+    - EndDate (DATE) 
+  Foreign Keys:
+    - PatientID → Patients.PatientID
+
+Table: Treatments
+  Columns:
+    - TreatmentID (INT) [PK]
+    - PatientID (INT) 
+    - TreatmentName (VARCHAR(50)) 
+    - StartDate (DATE) 
+    - EndDate (DATE) 
+  Foreign Keys:
+    - PatientID → Patients.PatientID
+
+Table: Referrals
+  Columns:
+    - ReferralID (INT) [PK]
+    - PatientID (INT) 
+    - DoctorID (INT) 
+    - ReferredTo (VARCHAR(50)) 
+    - Reason (VARCHAR(100)) 
+  Foreign Keys:
+    - DoctorID → Doctors.DoctorID
+    - PatientID → Patients.PatientID
+
+Table: Symptoms
+  Columns:
+    - SymptomID (INT) [PK]
+    - PatientID (INT) 
+    - SymptomDescription (VARCHAR(100)) 
+    - OnsetDate (DATE) 
+  Foreign Keys:
+    - PatientID → Patients.PatientID
+
+Table: Diagnosis
+  Columns:
+    - DiagnosisID (INT) [PK]
+    - PatientID (INT) 
+    - Condition (VARCHAR(50)) 
+    - DiagnosisDate (DATE) 
+  Foreign Keys:
+    - PatientID → Patients.PatientID
+
+Table: Follow_Up
+  Columns:
+    - FollowUpID (INT) [PK]
+    - PatientID (INT) 
+    - AppointmentID (INT) 
+    - FollowUpDate (DATE) 
+    - Notes (TEXT) 
+  Foreign Keys:
+    - AppointmentID → Appointments.AppointmentID
+    - PatientID → Patients.PatientID
+
+Table: Reports
+  Columns:
+    - ReportID (INT) [PK]
+    - PatientID (INT) 
+    - AppointmentID (INT) 
+    - ReportText (TEXT) 
+    - ReportDate (DATE) 
+  Foreign Keys:
+    - AppointmentID → Appointments.AppointmentID
+    - PatientID → Patients.PatientID
+
+Table: Radiologists
+  Columns:
+    - RadiologistID (INT) [PK]
+    - FirstName (VARCHAR(50)) 
+    - LastName (VARCHAR(50)) 
+    - ContactNumber (VARCHAR(15)) 
+    - Email (VARCHAR(50)) 
+    - DepartmentID (INT) 
+  Foreign Keys:
+    - DepartmentID → Departments.DepartmentID
+
+Table: Clinics
+  Columns:
+    - ClinicID (INT) [PK]
+    - ClinicName (VARCHAR(50)) 
+    - Address (VARCHAR(100)) 
+    - ContactNumber (VARCHAR(15)) 
+    - Email (VARCHAR(50)) 
+  Foreign Keys: None
+
+Table: Lab_Tests
+  Columns:
+    - LabTestID (INT) [PK]
+    - PatientID (INT) 
+    - TestName (VARCHAR(50)) 
+    - TestDate (DATE) 
+    - Results (TEXT) 
+  Foreign Keys:
+    - PatientID → Patients.PatientID
+
