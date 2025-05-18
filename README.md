@@ -182,7 +182,3 @@ This project blends real-world backend thinking:
 🔄 ETL | 📊 Analytics | 🛠️ Systems Design | 🧠 SQL | 🧹 Data Cleaning
 
 It's the kind of pipeline you'd build at a hospital startup or diagnostics lab to **make sense of raw, messy databases** — and turn them into real product features.
-
-```
-
-```
